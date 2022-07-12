@@ -1,6 +1,7 @@
 // import logo from './logo.svg';
 import './App.css';
 import { useState, useEffect } from 'react';
+import Grid from '../Components/Grid';
 
 function App() {
   
@@ -19,22 +20,19 @@ function App() {
   });
 
 
-  return(
-    
-    <div>
-      {all.map((data) => {
-        return(
-          <div>
-            Title:
-            {data["title"]}
-            <br/>
-            Date:
-            {data["date"]}
-            <br/><br/>
-          </div>
-        )})}
+  return (
+    <div
+      style={{
+        alignItems: "center",
+        justifyContent: "center",
+        display: "flex",
+        flexDirection: "column",
+      }}
+    >
+      {all.map((item) => (
+        <Grid key={item.title} item={item} />
+      ))}
     </div>
-  )
+  ); 
 }
-
 export default App;
