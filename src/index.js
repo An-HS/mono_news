@@ -4,11 +4,13 @@ import './index.css';
 import App from './Pages/App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Bar from './Components/Bar';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
+    <Bar/>
       <Routes>
         <Route path='/' element={<App/>}/>
         <Route path='*' element={<h1>404 Page Not Found</h1>}/>
